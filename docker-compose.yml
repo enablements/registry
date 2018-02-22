@@ -1,0 +1,9 @@
+version: '3.4'
+services:
+  registry:
+    image: distribution/registry
+    ports:
+      - 5000:5000
+    volumes:
+      - "./conf.yml:/etc/docker/registry/config.yml"
+      - "./certs/localhost_trust_chain.pem:/root/certs/bundle"
